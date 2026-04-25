@@ -1,0 +1,40 @@
+// ============================================================
+// Dashboard Layout Styles
+// ============================================================
+@use '@/styles/scss-vars' as *;
+@use '@/styles/mixins' as *;
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+.layout__main {
+  flex: 1;
+  margin-right: $sidebar-width;
+  min-width: 0;
+  @include transition(margin-right, var(--duration-normal), var(--ease-smooth));
+
+  &--collapsed {
+    margin-right: $sidebar-collapsed;
+  }
+
+  @include max-lg {
+    margin-right: 0;
+  }
+}
+
+.layout__content {
+  padding-top: var(--topbar-height);
+  min-height: 100vh;
+}
+
+.layout__page {
+  padding: var(--space-6);
+  animation: fadeIn 0.35s var(--ease-smooth) both;
+
+  @include max-md {
+    padding: var(--space-4);
+  }
+}

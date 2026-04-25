@@ -1,0 +1,23 @@
+// ============================================================
+// RAWNEX — SCSS Variables (no CSS rule blocks)
+// Safe to @use from CSS Module files
+// ============================================================
+
+// ─── Brand Colors ────────────────────────────────────────────
+$brand-blue:    #0A84FF;
+$brand-green:   #30D158;
+$brand-orange:  #FF9F0A;
+$brand-red:     #FF453A;
+$brand-purple:  #BF5AF2;
+
+// ─── Layout ──────────────────────────────────────────────────
+$sidebar-width:     260px;
+$sidebar-collapsed: 72px;
+$topbar-height:     56px;
+
+// ─── Breakpoints ─────────────────────────────────────────────
+$breakpoint-sm:  640px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  1024px;
+$breakpoint-xl:  1280px;
+$breakpoint-2xl: 1536px;

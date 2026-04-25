@@ -1,0 +1,192 @@
+// ============================================================
+// RAWNEX — Apple-Inspired Design System Variables
+// ============================================================
+
+// ─── Color Palette ───────────────────────────────────────────
+:root {
+  // Brand
+  --color-brand-primary:    #0A84FF;
+  --color-brand-secondary:  #30D158;
+  --color-brand-accent:     #FF9F0A;
+  --color-brand-danger:     #FF453A;
+  --color-brand-warning:    #FFD60A;
+  --color-brand-info:       #64D2FF;
+  --color-brand-purple:     #BF5AF2;
+
+  // Background layers (light)
+  --bg-base:        #F5F5F7;
+  --bg-surface:     #FFFFFF;
+  --bg-elevated:    #FFFFFF;
+  --bg-overlay:     rgba(255,255,255,0.85);
+  --bg-glass:       rgba(255,255,255,0.72);
+  --bg-card:        #FFFFFF;
+  --bg-input:       #F2F2F7;
+  --bg-hover:       rgba(0,0,0,0.04);
+  --bg-active:      rgba(10,132,255,0.10);
+
+  // Text
+  --text-primary:   #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary:  #AEAEB2;
+  --text-disabled:  #C7C7CC;
+  --text-inverse:   #FFFFFF;
+  --text-brand:     #0A84FF;
+  --text-success:   #30D158;
+  --text-danger:    #FF453A;
+  --text-warning:   #FF9F0A;
+
+  // Borders / Dividers
+  --border-subtle:  rgba(0,0,0,0.06);
+  --border-default: rgba(0,0,0,0.12);
+  --border-strong:  rgba(0,0,0,0.20);
+  --border-brand:   rgba(10,132,255,0.40);
+
+  // Shadows (Apple-style)
+  --shadow-xs:   0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.12);
+  --shadow-xl:   0 16px 48px rgba(0,0,0,0.16);
+  --shadow-2xl:  0 24px 64px rgba(0,0,0,0.20);
+  --shadow-brand:0 4px 20px rgba(10,132,255,0.25);
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+
+  // Spacing scale (8-pt grid)
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  // Typography
+  --font-sans:   'Vazirmatn', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:   "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+
+  --fs-xs:   11px;
+  --fs-sm:   13px;
+  --fs-base: 15px;
+  --fs-md:   17px;
+  --fs-lg:   20px;
+  --fs-xl:   24px;
+  --fs-2xl:  28px;
+  --fs-3xl:  34px;
+  --fs-4xl:  40px;
+  --fs-5xl:  48px;
+  --fs-6xl:  56px;
+  --fs-7xl:  72px;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+  --fw-heavy:   800;
+
+  --lh-tight:  1.15;
+  --lh-snug:   1.25;
+  --lh-normal: 1.45;
+  --lh-relaxed:1.65;
+
+  // Border radius
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  18px;
+  --radius-2xl: 22px;
+  --radius-3xl: 28px;
+  --radius-full: 9999px;
+
+  // Transitions
+  --duration-fast:   120ms;
+  --duration-normal: 220ms;
+  --duration-slow:   380ms;
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:        cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:         cubic-bezier(0.4, 0, 1, 1);
+
+  // Layout
+  --sidebar-width:       260px;
+  --sidebar-collapsed:   72px;
+  --topbar-height:       56px;
+  --content-max:         1280px;
+  --container-padding:   24px;
+
+  // Z-index
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:   1;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+}
+
+// ─── Dark Mode ───────────────────────────────────────────────
+[data-theme="dark"] {
+  --bg-base:        #000000;
+  --bg-surface:     #1C1C1E;
+  --bg-elevated:    #2C2C2E;
+  --bg-overlay:     rgba(28,28,30,0.88);
+  --bg-glass:       rgba(28,28,30,0.76);
+  --bg-card:        #1C1C1E;
+  --bg-input:       #2C2C2E;
+  --bg-hover:       rgba(255,255,255,0.05);
+  --bg-active:      rgba(10,132,255,0.15);
+
+  --text-primary:   #F5F5F7;
+  --text-secondary: #98989D;
+  --text-tertiary:  #636366;
+  --text-disabled:  #48484A;
+
+  --border-subtle:  rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.12);
+  --border-strong:  rgba(255,255,255,0.20);
+
+  --shadow-xs:   0 1px 2px rgba(0,0,0,0.20);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.30);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.35);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.40);
+  --shadow-xl:   0 16px 48px rgba(0,0,0,0.50);
+  --shadow-2xl:  0 24px 64px rgba(0,0,0,0.60);
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.40), 0 0 0 1px rgba(255,255,255,0.06);
+
+  --color-brand-primary:  #0A84FF;
+  --color-brand-secondary:#30D158;
+  --color-brand-accent:   #FF9F0A;
+  --color-brand-danger:   #FF453A;
+  --color-brand-warning:  #FFD60A;
+  --color-brand-purple:   #BF5AF2;
+
+  --text-brand:   #0A84FF;
+  --text-success: #30D158;
+  --text-danger:  #FF453A;
+  --text-warning: #FF9F0A;
+}
+
+// ─── SCSS Variables (for use in mixins) ─────────────────────
+$brand-blue:    #0A84FF;
+$brand-green:   #30D158;
+$brand-orange:  #FF9F0A;
+$brand-red:     #FF453A;
+$brand-purple:  #BF5AF2;
+
+$sidebar-width:     260px;
+$sidebar-collapsed: 72px;
+$topbar-height:     56px;
+
+$breakpoint-sm:  640px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  1024px;
+$breakpoint-xl:  1280px;
+$breakpoint-2xl: 1536px;

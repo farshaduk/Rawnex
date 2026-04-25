@@ -1,0 +1,6 @@
+'use client';
+import styles from './page.module.scss';
+
+export default function RFQPage() {
+  return <div className={styles['rfq']}></div>;
+}

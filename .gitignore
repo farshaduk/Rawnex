@@ -1,0 +1,20 @@
+# --- .NET / C# ---
+backend/src/**/bin/
+backend/src/**/obj/
+backend/src/**/logs/
+*.user
+*.suo
+*.vs/
+.vs/
+*.nupkg
+
+# --- Node / Next.js ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+# --- General ---
+*.DS_Store
+Thumbs.db
+*.log

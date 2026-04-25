@@ -1,0 +1,253 @@
+// ============================================================
+// Topbar Styles
+// ============================================================
+@use '@/styles/scss-vars' as *;
+@use '@/styles/mixins' as *;
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: $sidebar-width;
+  height: var(--topbar-height);
+  z-index: calc(var(--z-sticky) - 1);
+  @include flex-between;
+  padding: 0 var(--space-6);
+  gap: var(--space-4);
+  @include glass(20px, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
+  @include transition(right, var(--duration-normal), var(--ease-smooth));
+
+  &--collapsed {
+    right: $sidebar-collapsed;
+  }
+
+  @include max-lg {
+    right: 0;
+  }
+}
+
+// ─── Left ────────────────────────────────────────────────────
+.topbar__left {
+  @include flex-start;
+  gap: var(--space-4);
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar__menu-btn {
+  display: none;
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  @include transition;
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  @include max-lg {
+    display: flex;
+  }
+}
+
+.topbar__collapse-btn {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  @include transition;
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  @include max-lg {
+    display: none;
+  }
+}
+
+// ─── Search ──────────────────────────────────────────────────
+.topbar__search {
+  position: relative;
+  flex: 1;
+  max-width: 440px;
+}
+
+.topbar__search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  pointer-events: none;
+  display: flex;
+}
+
+.topbar__search-input {
+  width: 100%;
+  height: 36px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0 38px 0 var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+  @include transition;
+
+  &::placeholder { color: var(--text-tertiary); }
+
+  &:focus {
+    background: var(--bg-surface);
+    border-color: var(--border-brand);
+    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.12);
+  }
+}
+
+.topbar__search-shortcut {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 2px;
+}
+
+.topbar__search-key {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-weight: var(--fw-medium);
+}
+
+// ─── Right ───────────────────────────────────────────────────
+.topbar__actions {
+  @include flex-start;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.topbar__action-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  @include flex-center;
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  @include transition;
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+}
+
+.topbar__badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-brand-danger);
+  border-radius: 50%;
+  border: 2px solid var(--bg-surface);
+
+  &--count {
+    width: auto;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: var(--radius-full);
+    font-size: 9px;
+    font-weight: var(--fw-bold);
+    color: #fff;
+    @include flex-center;
+    top: 3px;
+    right: 3px;
+  }
+}
+
+// ─── Theme toggle ────────────────────────────────────────────
+.topbar__theme-btn {
+  width: 36px;
+  height: 36px;
+  @include flex-center;
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  @include transition;
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+}
+
+// ─── User dropdown ───────────────────────────────────────────
+.topbar__user {
+  @include flex-start;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+}
+
+.topbar__user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $brand-blue, $brand-purple);
+  @include flex-center;
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  border: 2px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.topbar__user-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+
+  @include max-md { display: none; }
+}
+
+// ─── Breadcrumb ──────────────────────────────────────────────
+.topbar__breadcrumb {
+  display: none;
+  @include flex-start;
+  gap: var(--space-1);
+  font-size: var(--fs-sm);
+
+  @include lg {
+    display: flex;
+  }
+}
+
+.topbar__breadcrumb-item {
+  color: var(--text-tertiary);
+  @include transition;
+
+  &--active {
+    color: var(--text-primary);
+    font-weight: var(--fw-medium);
+  }
+}
+
+.topbar__breadcrumb-sep {
+  color: var(--text-disabled);
+}
